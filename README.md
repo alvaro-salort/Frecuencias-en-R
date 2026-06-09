@@ -10,24 +10,12 @@
 Este proyecto fue diseñado como material de apoyo para el video tutorial de YouTube, pensado especialmente para estudiantes de la **Tecnicatura Universitaria en Desarrollo de Software (ITU)** y cualquier persona que esté dando sus primeros pasos en estadística general o análisis de datos con R.
 
 ---
-
-## 📺 Video Tutorial
-Si querés ver la explicación en formato video, donde recorremos el código línea por línea y analizamos los resultados en la consola, podés hacer clic acá:
-
-📌 **[Ver Tutorial en YouTube](https://youtube.com) (¡No olvides suscribirte y dejar tu like!)**
-
----
-
 ## 📂 Contenido del Repositorio
 
 El repositorio está organizado de la siguiente manera:
 
 * **`tablas_frecuencia.R`**: El script de R limpio y listo para ejecutar en RStudio.
-* **`guion_explicativo.md`**: El guión escrito completo que sirve de guía paso a paso con los textos del video.
-* **Tablas Generadas (CSV)**: Las tablas de frecuencia resultantes que exporta el script de forma automática:
-    * `tabla_frec_plataforma.csv` (Cualitativa Nominal)
-    * `tabla_frec_tickets.csv` (Cuantitativa Discreta)
-    * `tabla_frec_tiempo.csv` (Cuantitativa Continua - Sturges)
+* **`DatosNominales.xlsx`**: El archivo excel con los datos de los 103 programadores.
 
 ---
 
@@ -42,26 +30,24 @@ Necesitás tener instalado en tu computadora:
 Para poder cargar el archivo de datos directamente desde una planilla de Excel de forma visual, el script utiliza el paquete:
 * `readxl`
 
-*(Podés instalarlo ejecutando `install.packages("readxl")` en la consola de RStudio antes de correr el script).*
+*(El script incluye una validación automática: si no tenés la librería instalada, la descarga por vos la primera vez que lo ejecutás).*
 
 ---
 
-## 📊 Tipos de Variables y Notación Utilizada
+## 📊 Tipos de Variables y Estructura de las Tablas
 
-El proyecto procesa una muestra de **103 programadores** encuestados sobre sus hábitos laborales, analizando tres tipos de variables según la teoría estadística clásica:
+El proyecto procesa una muestra de **103 programadores** encuestados sobre sus hábitos laborales. El script analiza tres variables según su tipo y construye las tablas utilizando las siguientes columnas de R Base:
 
-| Variable | Tipo de Variable | Método / Notación | Resultados |
-| :--- | :--- | :--- | :--- |
-| **`Plataforma_Trabajo`** | Cualitativa Nominal | Datos no agrupados sin acumular ($x_i, f_i, f_r$) | `tabla_frec_plataforma.csv` |
-| **`Tickets`** | Cuantitativa Discreta | Datos no agrupados con acumuladas ($x_i, f_i, F_i, f_r, F_r$) | `tabla_frec_tickets.csv` |
-| **`Tiempo`** | Cuantitativa Continua | Datos agrupados en intervalos (Regla de Sturges) | `tabla_frec_tiempo.csv` |
+| Variable en el Dataset | Tipo de Variable | Columnas de la Tabla en R |
+| :--- | :--- | :--- |
+| **`Plataforma_Trabajo`** | Cualitativa Nominal | `Frec_Absoluta`, `Frec_Relativa` (Sin acumular) |
+| **`Tickets_Soporte`** | Cuantitativa Discreta | `Frec_Absoluta`, `Frec_Relativa`, `Frec_Acumulada` |
+| **`Tiempo_Conexion`** | Cuantitativa Continua | `Frec_Absoluta`, `Frec_Relativa`, `Frec_Acumulada` (Datos agrupados por intervalos usando la Regla de Sturges) |
 
-### Simbología Utilizada:
-* $x_i$: Valor de la variable o marca de clase (punto medio del intervalo).
-* $f_i$: Frecuencia absoluta simple (conteo exacto de casos).
-* $F_i$: Frecuencia absoluta acumulada.
-* $f_r$: Frecuencia relativa simple (proporción).
-* $F_r$: Frecuencia relativa acumulada.
+### Significado de las Columnas del Script:
+* **`Frec_Absoluta`**: Conteo físico de la cantidad de casos observados para esa categoría o intervalo.
+* **`Frec_Relativa`**: Proporción que representa cada categoría respecto al total de la muestra ($Frec\_Absoluta / n$).
+* **`Frec_Acumulada`**: Suma acumulada paso a paso de las frecuencias absolutas. Indica cuántas observaciones se encuentran hasta ese nivel inclusive.
 
 ---
 
@@ -73,6 +59,6 @@ Este proyecto está bajo la Licencia MIT. Podés descargar el código, modificar
 
 ## 🤝 Créditos y Agradecimientos
 
-Este trabajo fue realizado para la cátedra de Estadística de la **Tecnicatura Universitaria en Desarrollo de Software (ITU)**. 
+Este trabajo fue realizado para la cátedra de Álgebra y Estadística de la **Tecnicatura Universitaria en Desarrollo de Software (ITU)**. 
 
 Si te sirvió el material, ¡agradezco un montón tu estrella ⭐ en este repositorio!
