@@ -5,7 +5,7 @@
 [![Idioma](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-brightgreen?style=for-the-badge)](#)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-yellow.svg?style=for-the-badge)](#)
 
-¡Hola! Te doy la bienvenida a este repositorio. Aquí vas a encontrar todo el código y la explicación paso a paso para aprender a construir **tablas de frecuencias** en **R (R Base)**, procesando los datos de forma limpia y estructurada.
+¡Hola! Te doy la bienvenida a este repositorio. Acá vas a encontrar todo el código y la explicación paso a paso para aprender a construir **tablas de frecuencias** en **R (R Base)**, procesando los datos de forma limpia y estructurada.
 
 Este proyecto fue diseñado como material de apoyo para el video tutorial de YouTube, pensado especialmente para estudiantes de la **Tecnicatura Universitaria en Desarrollo de Software (ITU)** y cualquier persona que esté dando sus primeros pasos en estadística general o análisis de datos con R.
 
